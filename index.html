@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LLD Practice Platform</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">Practice loop</p>
+          <h1>LLD Practice Platform</h1>
+        </div>
+        <button id="reset-history" class="secondary-button" type="button">Clear history</button>
+      </header>
+
+      <main class="app-grid">
+        <aside class="panel">
+          <div class="panel-header">
+            <h2>Problems</h2>
+            <span id="problem-count" class="chip"></span>
+          </div>
+          <div id="problem-list" class="problem-list"></div>
+        </aside>
+
+        <section class="panel workspace-panel">
+          <div class="problem-brief">
+            <p class="eyebrow">Current challenge</p>
+            <h2 id="problem-name"></h2>
+            <p id="problem-summary"></p>
+          </div>
+
+          <div id="problem-goals" class="goal-list"></div>
+
+          <div class="field-group">
+            <label for="submission-format">Submission format</label>
+            <select id="submission-format">
+              <option value="Text design">Text design</option>
+              <option value="Class sketch">Class sketch</option>
+              <option value="Hybrid design">Hybrid design</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="solution-input">Your solution</label>
+            <textarea
+              id="solution-input"
+              rows="14"
+              placeholder="class ParkingLot { ... }\nclass Vehicle { ... }\nclass Ticket { ... }"
+            ></textarea>
+          </div>
+
+          <div class="button-row">
+            <button id="submit-solution" class="primary-button" type="button">Submit design</button>
+            <button id="load-example" class="secondary-button" type="button">Load sample</button>
+          </div>
+
+          <div id="status-banner" class="status-banner" aria-live="polite"></div>
+          <div id="feedback-panel" class="feedback-panel"></div>
+        </section>
+
+        <aside class="panel history-panel">
+          <div class="panel-header">
+            <h2>History</h2>
+          </div>
+          <div id="attempt-history" class="history-list"></div>
+        </aside>
+      </main>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
+
